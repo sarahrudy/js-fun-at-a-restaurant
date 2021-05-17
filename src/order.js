@@ -20,11 +20,18 @@ function listItems(orders) {
   return listItemsByName.join(', ')
 }
 
-
+function searchOrder(orders, orderItem) {
+  for (var i = 0; i < orders.length; i++) {
+    if (orders[i].item === orderItem) {
+      return true
+    }
+  }
+  return false
+}
 
 module.exports = {
   takeOrder,
   refundOrder,
   listItems,
-  // searchOrder
+  searchOrder
 }
